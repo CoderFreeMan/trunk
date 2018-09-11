@@ -21,6 +21,4 @@
 
     <dubbo:service interface="com.ydj.service.DemoService" ref="demoService" />
 
-    <bean id="demoService" class="com.ydj.DemoServiceImpl" />
-
 </beans>

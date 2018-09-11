@@ -2,6 +2,7 @@ package com.ydj;
 
 import com.alibaba.dubbo.rpc.RpcContext;
 import com.ydj.service.DemoService;
+import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -19,6 +20,7 @@ import java.util.Date;
  * <p>    序号    日期    修改人    修改原因    </p>
  * <p>    1                                     </p>
  */
+@Service(value = "demoService")
 public class DemoServiceImpl implements DemoService {
     public String sayHello(String name) {
 
