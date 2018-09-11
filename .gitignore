@@ -11,3 +11,5 @@ basic-java/target/*
 base-framework/target/*
 activemq-module/activemq-consumer/target/*
 activemq-module/activemq-producer/target/*
+rabbitmq-module/rabbitmq-consumer/target/*
+rabbitmq-module/rabbitmq-producer/target/*
