@@ -7,3 +7,7 @@
 dubbo-module/dubbo-api/target/*
 dubbo-module/dubbo-consumer/target/*
 dubbo-module/dubbo-provider/target/*
+basic-java/target/*
+base-framework/target/*
+activemq-module/activemq-consumer/target/*
+activemq-module/activemq-producer/target/*
