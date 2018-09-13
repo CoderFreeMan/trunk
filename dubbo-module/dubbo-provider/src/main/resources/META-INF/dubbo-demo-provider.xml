@@ -15,9 +15,9 @@
 
     <dubbo:application name="${dubbo.application.name}" />
 
-    <dubbo:registry address="${dubbo.registry.address}" />
+    <dubbo:registry address="zookeeper://192.168.211.128:2181" />
 
-    <dubbo:protocol name="${dubbo.protocol.name}" port="${dubbo.protocol.port}" />
+    <dubbo:protocol name="dubbo" port="20880" />
 
     <dubbo:service interface="com.ydj.service.DemoService" ref="demoService" />
 
