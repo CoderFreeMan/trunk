@@ -17,7 +17,7 @@ import org.springframework.context.annotation.ImportResource;
  * <p>    1                                     </p>
  */
 @Configuration
-@ImportResource({"classpath:META-INF/dubbo-demo-provider.xml"})
+@ImportResource({"classpath:META-INF/dubbo-demo-integration.xml"})
 public class DubboConfig {
 
 }
