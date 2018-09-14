@@ -1,5 +1,7 @@
 package com.ydj.service;
 
+import com.ydj.entity.User;
+
 /**
  * <p> Date             :2018/2/24 </p>
  * <p> Module           : </p>
@@ -15,6 +17,6 @@ package com.ydj.service;
  */
 public interface DemoService {
 
-    String sayHello(String name);
+    User sayHello(User user);
 
 }

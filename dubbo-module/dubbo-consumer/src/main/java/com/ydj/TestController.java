@@ -1,5 +1,6 @@
 package com.ydj;
 
+import com.ydj.entity.User;
 import com.ydj.service.DemoService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -35,10 +36,10 @@ public class TestController {
     private DemoService demoService;
 
     @PostMapping(value = "/test")
-    public String test(@RequestBody String hello) {
-        LOGGER.info("入参为: " + hello);
-        String s = demoService.sayHello(hello);
-        LOGGER.info("================" + s + "================");
-        return s;
+    public User test(@RequestBody User user) {
+        LOGGER.info("入参为: " + user.toString());
+        User response = demoService.sayHello(user);
+        LOGGER.info("================" + response + "================");
+        return response;
     }
 }

@@ -29,6 +29,7 @@ jdk 1.8 (1.8.0_144) \
 springboot 1.5.10 \
 Maven 3.3.3
 ###项目启动
+前提条件：启动 zookeeper 服务
 1. 首先启动服务提供者模块(dubbo-demo-provider)
 2. 然后启动服务消费者模块(dubbo-demo-consumer)
 3. 最后通过接口调试工具(例如:postman)调用服务消费模块中的测试接口

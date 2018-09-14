@@ -4,6 +4,7 @@
 *.jar
 .idea/*
 *.iml
+*.log
 dubbo-module/dubbo-api/target/*
 dubbo-module/dubbo-consumer/target/*
 dubbo-module/dubbo-provider/target/*
