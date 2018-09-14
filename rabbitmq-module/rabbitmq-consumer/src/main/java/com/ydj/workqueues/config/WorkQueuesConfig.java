@@ -37,13 +37,15 @@ public class WorkQueuesConfig {
         return cachingConnectionFactory;
     }
 
-        /*@Bean
+    private static class ReceiverConfig{
+        @Bean
         public WorkQueuesConsumer reveiver01() {
             return new WorkQueuesConsumer();
-        }*/
-        /*@Bean
+        }
+        @Bean
         public WorkQueuesConsumer reveiver02() {
             return new WorkQueuesConsumer();
-        }*/
+        }
+    }
 
 }

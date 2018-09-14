@@ -29,7 +29,7 @@ public class WorkQueuesMQConfig {
      */
     @Bean
     public Queue queue() {
-        return new Queue("test");
+        return new Queue("workqueues");
     }
 
     /**
