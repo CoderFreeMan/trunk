@@ -18,7 +18,7 @@ public class TopicProducer {
     @Autowired
     private RabbitTemplate template;
 
-    @Autowired
+    @Autowired(required = false)
     private TopicExchange topic;
 
     public void send() {

@@ -29,7 +29,7 @@ public class RoutingConfig {
     }
 
     /**
-     * producer
+     * rpcserver
      * @return
      */
     @Bean

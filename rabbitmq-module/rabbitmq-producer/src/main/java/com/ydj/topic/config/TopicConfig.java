@@ -29,7 +29,7 @@ public class TopicConfig {
     }
 
     /**
-     * producer
+     * rpcserver
      * @return
      */
     @Bean
