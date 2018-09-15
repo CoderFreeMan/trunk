@@ -18,11 +18,11 @@ public class PubSubProducer {
     @Autowired
     private RabbitTemplate template;
 
-    @Autowired
+    @Autowired(required = false)
     private FanoutExchange fanout;
 
     public void send() {
-        for (int i = 0; i < 100000; i++) {
+        for (int i = 0; i < 100; i++) {
             logger.info(i + "");
             this.template.convertAndSend(fanout.getName(), "", "hello" + i);
         }

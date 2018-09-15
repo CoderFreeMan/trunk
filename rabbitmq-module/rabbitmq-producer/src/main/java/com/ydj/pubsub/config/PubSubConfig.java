@@ -3,8 +3,10 @@ package com.ydj.pubsub.config;
 import com.ydj.pubsub.producer.PubSubProducer;
 import org.springframework.amqp.core.*;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
 
 /**
@@ -58,25 +60,28 @@ public class PubSubConfig {
     /**
      * 队列并绑定路由
      */
-    private static class ReceiverConfig {
+    private static class QueueConfig {
 
         /**
          * 队列1
          * @return
          */
-        @Bean
+        @Primary
+        @Bean(name = "pubsubqueue1")
         public Queue autoDeleteQueue1() {
-            return new AnonymousQueue();
+            return new Queue("pubsubqueue1");
         }
 
         /**
          * 队列2
          * @return
          */
-        /*@Bean
+        @Qualifier
+        @Bean(name = "pubsubqueue2")
         public Queue autoDeleteQueue2() {
-            return new AnonymousQueue();
-        }*/
+//            new AnonymousQueue(); // 匿名队列只能在同一个工程中被消费，不能够跨工程，跨工程会报一个被lock的错误，坑啊
+            return new Queue("pubsubqueue2");
+        }
 
         /**
          * 队列1绑定路由
@@ -86,7 +91,7 @@ public class PubSubConfig {
          */
         @Bean
         public Binding binding1(FanoutExchange fanout,
-                                Queue autoDeleteQueue1) {
+                                @Qualifier("pubsubqueue1") Queue autoDeleteQueue1) {
             return BindingBuilder.bind(autoDeleteQueue1).to(fanout);
         }
 
@@ -96,10 +101,11 @@ public class PubSubConfig {
          * @param autoDeleteQueue2
          * @return
          */
-        /*@Bean
+        @Bean
         public Binding binding2(FanoutExchange fanout,
-                                Queue autoDeleteQueue2) {
+                                @Qualifier("pubsubqueue2") Queue autoDeleteQueue2) {
             return BindingBuilder.bind(autoDeleteQueue2).to(fanout);
-        }*/
+        }
+
     }
 }

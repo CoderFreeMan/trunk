@@ -1,10 +1,8 @@
-package com.ydj.workqueues.consumer;
+package com.ydj.pubsub.consumer;
 
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
-import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
 /**
  * <p> Date             :2018/9/14 </p>
@@ -19,13 +17,13 @@ import org.springframework.context.annotation.Configuration;
  * <p>    序号    日期    修改人    修改原因    </p>
  * <p>    1                                     </p>
  */
-//@Configuration
-@RabbitListener(queues = {"workqueues"})
-public class WorkQueuesConsumer {
 
-    @RabbitHandler
+public class PubSubConsumer02 {
+
+    @RabbitListener(queues = "pubsubqueue2")
     public void test(String message) {
         System.out.println(message);
     }
+
 
 }
