@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 读取配置文件 -->
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="fileEncoding" value="GBK"/>
+        <property name="ignoreUnresolvablePlaceholders" value="true"/>
+        <property name="locations">
+            <list>
+                <value>classpath:properties/activemq.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- 重发机制 -->
+    <bean id="activeMQRedeliveryPolicy" class="org.apache.activemq.RedeliveryPolicy">
+        <property name="useExponentialBackOff" value="true"/>
+        <property name="maximumRedeliveries" value="${active.maximumRedeliveries}"/>
+        <property name="initialRedeliveryDelay" value="${active.initialRedeliveryDelay}"/>
+        <property name="backOffMultiplier" value="${active.backOffMultiplier}"/>
+        <property name="maximumRedeliveryDelay" value="${active.maximumRedeliveryDelay}"/>
+    </bean>
+
+    <!-- 连接工厂 -->
+    <bean id="targetConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+        <property name="brokerURL" value="${activemq.brokerURL}"/>
+        <property name="userName" value="${activemq.userName}"/>
+        <property name="password" value="${activemq.password}"/>
+        <property name="objectMessageSerializationDefered" value="true"/>
+        <property name="trustAllPackages" value="true"/>
+        <property name="redeliveryPolicy" ref="activeMQRedeliveryPolicy"/>
+    </bean>
+
+    <!-- 连接工厂池 -->
+    <bean id="pooledConnectionFactory" class="org.apache.activemq.pool.PooledConnectionFactory">
+        <property name="connectionFactory" ref="targetConnectionFactory"/>
+        <property name="maxConnections" value="${active.maxConnections}"/>
+    </bean>
+
+    <!-- spring 用于管理真正的ConnectionFacory的ConnectionFactory -->
+    <bean id="connectionFactory" class="org.springframework.jms.connection.CachingConnectionFactory">
+        <property name="targetConnectionFactory" ref="pooledConnectionFactory"/>
+        <property name="sessionCacheSize" value="${active.sessionCacheSize}"/>
+        <property name="reconnectOnException" value="true"/>
+    </bean>
+
+    <!-- Spring JMS Template -->
+    <bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+        <property name="connectionFactory" ref="connectionFactory"/>
+        <property name="receiveTimeout" value="${active.receiveTimeout}"/>
+        <property name="sessionTransacted" value="true"/>
+    </bean>
+</beans>
