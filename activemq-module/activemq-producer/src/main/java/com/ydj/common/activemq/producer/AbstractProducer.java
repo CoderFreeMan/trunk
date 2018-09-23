@@ -1,5 +1,6 @@
 package com.ydj.common.activemq.producer;
 
+import com.ydj.common.activemq.exception.MQException;
 import com.ydj.common.activemq.jms.JMSConnector;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -49,7 +50,7 @@ public abstract class AbstractProducer {
             this.jmsConnector.afterPropertiesSet();
         } catch (Exception e) {
             logger.info("JmsConnector run afterPropertiesSet Error!");
-//            throw new MQException(e);
+            throw new MQException(e);
         }
     }
 
