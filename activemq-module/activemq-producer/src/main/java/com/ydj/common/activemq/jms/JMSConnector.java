@@ -125,9 +125,9 @@ public class JMSConnector implements InitializingBean, DisposableBean {
     @Override
     public void afterPropertiesSet() throws Exception {
         argumentChecker();
-        workerThread = new Thread(null, new Runnable() {
-            @Override
-            public void run() {
+        workerThread = new Thread(null, () -> {
+//            @Override
+//            public void run() {
                 while (status.get() == RUNNING || (status.get() == STOPPED && innerQueue.size() > 0)) {
                     long startTime = System.currentTimeMillis();
                     long currentTime = System.currentTimeMillis();
@@ -163,7 +163,7 @@ public class JMSConnector implements InitializingBean, DisposableBean {
                         }
                     }
                 }
-            }
+//            }
         }, threadName);
         workerThread.start();
         status.compareAndSet(CREATED, RUNNING);
