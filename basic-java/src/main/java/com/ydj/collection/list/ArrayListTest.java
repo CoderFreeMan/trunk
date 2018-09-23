@@ -102,11 +102,12 @@ public class ArrayListTest {
      * @param list
      */
     private static void arraySplitor(List list) {
-        Optional.ofNullable(list).get().stream().spliterator().trySplit().forEachRemaining(new Consumer() {
-            @Override
+        Optional.ofNullable(list).get().stream().spliterator().trySplit().forEachRemaining((Object o) -> {
+            System.out.println(o);
+            /*@Override
             public void accept(Object o) {
                 System.out.println(o);
-            }
+            }*/
         });
     }
 

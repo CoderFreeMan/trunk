@@ -173,9 +173,9 @@ public class JMSConnector implements InitializingBean, DisposableBean {
     }
 
     private void sendInternal(final List<Serializable> buffer) throws JMSException {
-            jmsTemplate.execute(destinationQueueName, new ProducerCallback<Void>() {
-                @Override
-                public Void doInJms(Session session, MessageProducer producer) throws JMSException {
+            jmsTemplate.execute(destinationQueueName, (Session session, MessageProducer producer)  -> {
+//                @Override
+//                public Void doInJms(Session session, MessageProducer producer) throws JMSException {
                     for (Serializable item : buffer) {
                         try {
                             if (item instanceof DelayMessageWrapper) {
@@ -217,7 +217,7 @@ public class JMSConnector implements InitializingBean, DisposableBean {
                         }
                     }
                     return null;
-                }
+//                }
             });
     }
 
