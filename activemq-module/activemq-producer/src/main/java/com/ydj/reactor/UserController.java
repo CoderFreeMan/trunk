@@ -1,5 +1,6 @@
 package com.ydj.reactor;
 
+import com.ydj.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -42,48 +43,4 @@ public class UserController {
         return "success";
     }
 
-}
-
-class User implements Serializable {
-
-    @NotNull(message = "001001001")
-    private String userName;
-
-    private String realName;
-
-    @NotNull(message = "001001002")
-    private String phoneNum;
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getRealName() {
-        return realName;
-    }
-
-    public void setRealName(String realName) {
-        this.realName = realName;
-    }
-
-    public String getPhoneNum() {
-        return phoneNum;
-    }
-
-    public void setPhoneNum(String phoneNum) {
-        this.phoneNum = phoneNum;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "userName='" + userName + '\'' +
-                ", realName='" + realName + '\'' +
-                ", phoneNum='" + phoneNum + '\'' +
-                '}';
-    }
 }

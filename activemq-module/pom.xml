@@ -66,6 +66,7 @@
     <modules>
         <module>activemq-producer</module>
         <module>activemq-consumer</module>
+        <module>activemq-common</module>
     </modules>
 
 </project>
