@@ -92,9 +92,9 @@ public class JMSConnector implements InitializingBean, DisposableBean {
     }
 
     public void delaySend(final Serializable message, final int delaySendTimeInMillis) {
-        jmsConnectorListener.beforeSend(new JMSConnectorEvent(threadName, JMSConnectorEvent.Type.SEND, message));
+        jmsConnectorListener.beforeSend(new JMSConnectorEvent(threadName, JMSConnectorEvent.Type.DELAY_SEND, message));
         doDelaySend(message, delaySendTimeInMillis);
-        jmsConnectorListener.afterSend(new JMSConnectorEvent(threadName, JMSConnectorEvent.Type.SEND, message));
+        jmsConnectorListener.afterSend(new JMSConnectorEvent(threadName, JMSConnectorEvent.Type.DELAY_SEND, message));
     }
 
     public void doDelaySend(Serializable message, int delaySendTimeInMillis) {
