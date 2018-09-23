@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="userConsumer" class="com.ydj.consumer.userConsumer.UserConsumer"/>
+
+    <bean id="userListenerContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="connectionFactory"/>
+        <property name="destinationName" value="user"/>
+        <property name="messageListener" ref="userConsumer"/>
+        <property name="concurrentConsumers" value="${active.mq.concurrentConsumers}"/>
+        <property name="sessionTransacted" value="true"/>
+    </bean>
+</beans>
