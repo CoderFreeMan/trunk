@@ -1,4 +1,4 @@
-package com.ydj.testEntity;
+package com.ydj.testentity;
 
 /**
  * <p> Date             :2018/9/24 </p>

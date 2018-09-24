@@ -1,7 +1,7 @@
 package com.ydj.bean;
 
-import com.ydj.testEntity.Book;
-import com.ydj.testEntity.User;
+import com.ydj.testentity.Book;
+import com.ydj.testentity.User;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,4 +1,4 @@
-package com.ydj.testEntity;
+package com.ydj.testentity;
 
 import java.util.List;
 
