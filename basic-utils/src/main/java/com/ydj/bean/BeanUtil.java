@@ -29,7 +29,7 @@ import java.util.Map;
 public final class BeanUtil {
 
     /**
-     * 私有构造方法
+     * 私有构造方法, 防止在类内部被调用
      */
     private BeanUtil() {
         throw new AssertionError();
