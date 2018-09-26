@@ -9,9 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static org.junit.Assert.*;
-
-public class BeanUtilTest {
+public class BeanMapUtilTest {
 
     @Test
     public void beanToMap() {
@@ -29,7 +27,7 @@ public class BeanUtilTest {
         books.add(b1);
         books.add(b2);
         user.setBooks(books);
-        Map<String, Object> beanMap = BeanUtil.beanToMap(user);
+        Map<String, Object> beanMap = BeanMapUtil.beanToMap(user);
         beanMap.forEach((k, v) -> {
             System.out.println(k + " = " + v);
         });
@@ -48,7 +46,7 @@ public class BeanUtilTest {
         books.add(b1);
         books.add(b2);
         map.put("books", books);
-        User user = BeanUtil.mapToBean(map, User.class);
+        User user = BeanMapUtil.mapToBean(map, User.class);
         System.out.println(user.toString());
     }
 }

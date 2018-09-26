@@ -26,19 +26,19 @@ import java.util.Map;
  * <p>    序号    日期    修改人    修改原因    </p>
  * <p>    1                                     </p>
  */
-public final class BeanUtil {
+public final class BeanMapUtil {
 
     /**
      * 私有构造方法, 防止在类内部被调用
      */
-    private BeanUtil() {
+    private BeanMapUtil() {
         throw new AssertionError();
     }
 
     /**
      * log
      */
-    private static final Logger logger = LoggerFactory.getLogger(BeanUtil.class);
+    private static final Logger logger = LoggerFactory.getLogger(BeanMapUtil.class);
 
     /**
      * Java 对象转 Map 集合
