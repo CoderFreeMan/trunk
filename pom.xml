@@ -77,5 +77,6 @@
         <module>activemq-module</module>
         <module>base-framework</module>
         <module>basic-java</module>
+        <module>basic-utils</module>
     </modules>
 </project>
