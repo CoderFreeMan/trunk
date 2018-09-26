@@ -1,5 +1,7 @@
 package com.ydj.design_patterns.singleton;
 
+import java.io.Serializable;
+
 /**
  * <p> Date             :2018/9/25 </p>
  * <p> Module           : </p>
@@ -23,13 +25,15 @@ public enum SingletonOfEnum {
         connection = new DBConnection();
     }
 
-    public static DBConnection getConnection() {
+    public DBConnection getConnection() {
         return connection;
     }
+    public static class DBConnection {
+        private DBConnection() {
 
+        }
+    }
 }
 
 
-class DBConnection {
 
-}
