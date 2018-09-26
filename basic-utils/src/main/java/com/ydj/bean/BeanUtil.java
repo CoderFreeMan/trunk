@@ -32,6 +32,7 @@ public final class BeanUtil {
      * 私有构造方法
      */
     private BeanUtil() {
+        throw new AssertionError();
     }
 
     /**
