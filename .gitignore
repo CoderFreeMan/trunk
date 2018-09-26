@@ -17,3 +17,4 @@ rabbitmq-module/rabbitmq-consumer/target/*
 rabbitmq-module/rabbitmq-producer/target/*
 kafka-module/kafka-consumer/target/*
 kafka-module/kafka-producer/target/*
+basic-utils/target/*
