@@ -1,4 +1,6 @@
-package com.ydj.testentity;
+package com.ydj.testentity.xmlentity;
+
+import com.ydj.testentity.Book;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
