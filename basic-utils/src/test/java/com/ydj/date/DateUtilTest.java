@@ -61,4 +61,28 @@ public class DateUtilTest {
     public void parseDateToTimestamp() {
         System.out.println(DateUtil.parseDateToTimestamp(new Date()));
     }
+
+    @Test
+    public void getBeforMonthFirstDate() throws ParseException {
+        Date beforMonthFirstDate = DateUtil.getBeforMonthFirstDate();
+        System.out.println(DateUtil.parseDefaultDateTime(beforMonthFirstDate));
+    }
+
+    @Test
+    public void getBeforMonthLastDate() {
+        Date beforMonthLastDate = DateUtil.getBeforMonthLastDate();
+        System.out.println(DateUtil.parseDefaultDateTime(beforMonthLastDate));
+    }
+
+    @Test
+    public void getBeforWeekFirstDate() {
+        Date beforWeekFirstDate = DateUtil.getBeforWeekFirstDate();
+        System.out.println(DateUtil.parseDefaultDateTime(beforWeekFirstDate));
+    }
+
+    @Test
+    public void getBeforWeekLastDate() {
+        Date beforWeekLastDate = DateUtil.getBeforWeekLastDate();
+        System.out.println(DateUtil.parseDefaultDateTime(beforWeekLastDate));
+    }
 }

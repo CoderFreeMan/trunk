@@ -5,7 +5,9 @@ import org.apache.commons.lang3.StringUtils;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 /**
  * <p> Date             :2017/10/9 </p>
@@ -170,6 +172,65 @@ public class DateUtil {
             throw new NullPointerException(NULL_EXCEPTION);
         }
         return date.getTime();
+    }
+
+    /**
+     * 获取当前时间的上个月的第一天
+     * @return 返回当前时间的上个月的第一天的零时零分零秒
+     */
+    public static Date getBeforMonthFirstDate() {
+        Calendar calendar=Calendar.getInstance();
+        calendar.add(Calendar.MONTH, -1);
+        calendar.set(Calendar.DAY_OF_MONTH, 1);
+        calendar.set(Calendar.HOUR, -12);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MILLISECOND, 0);
+        return calendar.getTime();
+    }
+
+    /**
+     * 获取当前月份的第一天
+     * @return 返回当前时间月的第一天的零时零分零秒
+     */
+    public static Date getBeforMonthLastDate() {
+        Calendar calendar=Calendar.getInstance();
+        calendar.add(Calendar.MONTH, 0);
+        calendar.set(Calendar.DAY_OF_MONTH, 1);
+        calendar.set(Calendar.HOUR, -12);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MILLISECOND, 0);
+        return calendar.getTime();
+    }
+
+    /**
+     * 获取当前周的上一周的第一天
+     * @return 返回当前周的上一周第一天的零时零分零秒
+     */
+    public static Date getBeforWeekFirstDate() {
+        Calendar calendar=Calendar.getInstance(Locale.CHINA);
+        calendar.add(Calendar.WEEK_OF_MONTH, -1);
+        calendar.set(Calendar.DAY_OF_WEEK, 2);
+        calendar.set(Calendar.HOUR_OF_DAY, 0);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MILLISECOND, 0);
+        return calendar.getTime();
+    }
+
+    /**
+     * 获取当前周的第一天的第一天
+     * @return 返回当前周的第一天的零时零分零秒
+     */
+    public static Date getBeforWeekLastDate() {
+        Calendar calendar=Calendar.getInstance(Locale.CHINA);
+        calendar.set(Calendar.DAY_OF_WEEK, 2);
+        calendar.set(Calendar.HOUR_OF_DAY, 0);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MILLISECOND, 0);
+        return calendar.getTime();
     }
 
 }
