@@ -78,5 +78,6 @@
         <module>base-framework</module>
         <module>basic-java</module>
         <module>basic-utils</module>
+        <module>support-mysql</module>
     </modules>
 </project>
