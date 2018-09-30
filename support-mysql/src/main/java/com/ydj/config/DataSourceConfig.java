@@ -18,11 +18,7 @@ import org.springframework.context.annotation.PropertySource;
  * <p>    序号    日期    修改人    修改原因    </p>
  * <p>    1                                     </p>
  */
-@Configuration
-@PropertySource(value = "classpath:properties/db.properties")
-@ConfigurationProperties(prefix = "spring.datasource")
 public class DataSourceConfig {
-
 
 
 }
