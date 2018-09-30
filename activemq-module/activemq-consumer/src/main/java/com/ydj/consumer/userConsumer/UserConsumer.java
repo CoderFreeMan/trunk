@@ -1,7 +1,7 @@
 package com.ydj.consumer.userConsumer;
 
 import com.ydj.common.activemq.listener.AbstractJMSObjectMsgListener;
-import com.ydj.entity.User;
+import com.ydj.POJOs.User;
 import org.springframework.stereotype.Component;
 
 import java.io.Serializable;

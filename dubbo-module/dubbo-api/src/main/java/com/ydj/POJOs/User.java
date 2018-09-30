@@ -1,4 +1,4 @@
-package com.ydj.entity;
+package com.ydj.POJOs;
 
 import java.io.Serializable;
 

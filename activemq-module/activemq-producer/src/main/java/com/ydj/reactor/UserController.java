@@ -1,6 +1,6 @@
 package com.ydj.reactor;
 
-import com.ydj.entity.User;
+import com.ydj.POJOs.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
-import java.io.Serializable;
 
 /**
  * <p> Date             :2018/9/23 </p>

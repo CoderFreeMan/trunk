@@ -62,7 +62,7 @@ class Entity{
 
     @Override
     public String toString() {
-        return "entity{" +
+        return "POJOs{" +
                 "name='" + name + '\'' +
                 '}';
     }

@@ -1,14 +1,11 @@
 package com.ydj;
 
 import com.alibaba.dubbo.rpc.RpcContext;
-import com.ydj.entity.User;
+import com.ydj.POJOs.User;
 import com.ydj.service.DemoService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /**
  * <p> Date             :2018/2/24 </p>

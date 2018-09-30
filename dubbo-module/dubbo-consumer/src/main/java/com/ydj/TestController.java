@@ -1,6 +1,6 @@
 package com.ydj;
 
-import com.ydj.entity.User;
+import com.ydj.POJOs.User;
 import com.ydj.service.DemoService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

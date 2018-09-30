@@ -1,9 +1,8 @@
 package com.ydj.collection.list;
 
-import com.ydj.entity.Apple;
+import com.ydj.POJOs.Apple;
 
 import java.util.*;
-import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 public class ArrayListTest {

@@ -79,5 +79,6 @@
         <module>basic-java</module>
         <module>basic-utils</module>
         <module>support-mysql</module>
+        <module>mybatis-practice</module>
     </modules>
 </project>

@@ -1,9 +1,10 @@
-package com.ydj.service;
+package com.ydj.build.buildfromjavaconfig;
 
 import com.ydj.POJOs.User;
+import org.apache.ibatis.annotations.Select;
 
 /**
- * <p> Date             :2018/2/24 </p>
+ * <p> Date             :2017/10/9 </p>
  * <p> Module           : </p>
  * <p> Description      : </p>
  * <p> Remark           : </p>
@@ -15,8 +16,9 @@ import com.ydj.POJOs.User;
  * <p>    序号    日期    修改人    修改原因    </p>
  * <p>    1                                     </p>
  */
-public interface DemoService {
+public interface UserMapper {
 
-    User sayHello(User user);
+    @Select("SELECT * FROM user WHERE id = #{id}")
+    User selectUser(int id);
 
 }
