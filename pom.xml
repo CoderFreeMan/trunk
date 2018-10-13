@@ -80,5 +80,6 @@
         <module>basic-utils</module>
         <module>support-mysql</module>
         <module>mybatis-practice</module>
+        <module>springboot2</module>
     </modules>
 </project>
