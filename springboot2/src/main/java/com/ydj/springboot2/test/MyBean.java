@@ -30,9 +30,15 @@ public class MyBean implements CommandLineRunner {
     @Autowired
     private ApplicationArguments args;
 
+    @Autowired
+    private PropertiesRandomNum propertiesRandomNum;
+
     @Override
     public void run(String... args) throws Exception {
         args();
+        System.out.println("-------------------------------------");
+        int secret = propertiesRandomNum.getSecret();
+        System.out.println("properties random number generate test -------> " + secret);
     }
 
     private void args(){
