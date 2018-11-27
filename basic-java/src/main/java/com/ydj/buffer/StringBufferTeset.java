@@ -13,11 +13,8 @@ package com.ydj.buffer;
 public class StringBufferTeset {
 
     public static void main(String[] args) {
-        StringBuffer sb = new StringBuffer();
-        sb.append("14456788756");
-        sb.append("<br>" + "18937671061");
+        StringBuilder sb = new StringBuilder();
         System.out.println(sb.toString());
-        System.out.println(sb.length());
     }
 
 }

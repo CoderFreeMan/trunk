@@ -1,6 +1,7 @@
 package com.ydj.collection.list;
 
 import com.ydj.POJOs.Apple;
+import com.ydj.collection.entity.QuChongObj;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -8,20 +9,27 @@ import java.util.stream.Collectors;
 public class ArrayListTest {
 
     public static void main(String[] args) {
-
-        List<Integer> list = new ArrayList<>();
-        for (int i = 0; i < 1; i++) {
-            list.add(i);
+        List<QuChongObj> list = new ArrayList<>();
+        for (int i = 0; i < 1000; i++) {
+            QuChongObj o = new QuChongObj();
+            o.setId(i);
+            list.add(o);
         }
-//        arrayTraversing01(list);
-//        arrayTraversing02(list);
-//        arrayTraversing03(list);
-//        arrayTraversing04(list);
-//        arrayTraversing05(list);
-//        arrayTraversing06(list);
-//        arraySplitor(list);
-//        listToArray(list);
-        arrayTraversing06(list);
+        for (int i = 0; i < list.size(); i++) {
+            list.get(i).setCompanyId("abc" + i);
+        }
+        list.stream().forEach(item -> {
+            System.out.println(item.getId());
+        });
+    }
+
+    private static List getNullList(){
+        return null;
+    }
+
+    private static void changeableArgs(String ... str) {
+        System.out.println(str.getClass().getName());
+        System.out.println(str[0]);
     }
 
     /**

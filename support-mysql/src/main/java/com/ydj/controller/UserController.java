@@ -1,12 +1,13 @@
 package com.ydj.controller;
 
+import com.dajia.util.http.HttpClientUtil;
 import com.ydj.mapper.UserMapper;
 import com.ydj.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * <p> Date             :2017/10/9 </p>
@@ -35,9 +36,57 @@ public class UserController {
     }
 
     @RequestMapping(value = "/selectOneUser")
-    public User selectOne(@RequestBody User user) {
+    public User selectOne(User user) {
         userMapper.selectOne(user);
         return user;
     }
 
+    @PostMapping(value = "/test")
+    public List<User> test() {
+        List<User> userList = new ArrayList<>();
+        User u1 = new User();
+        u1.setId(1);
+        User u2 = new User();
+        u2.setId(2);
+        userList.add(u1);
+        userList.add(u2);
+        return userList;
+    }
+
+    @RequestMapping(value = "/aaa")
+    public void test1 () throws Exception {
+        String s = HttpClientUtil.doPost("localhost:9999/user/test", null);
+        System.out.println(s);
+    }
+
+    @PostMapping(value = "/test9")
+    public void test9(user user) {
+        System.out.println(user.getName() + "-----" + user.getAge());
+    }
+
+    @PostMapping(value = "/test19")
+    public void test9(@RequestParam String name) {
+        System.out.println(name);
+    }
+}
+
+class user{
+    String name;
+    String age;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
 }

@@ -15,6 +15,7 @@ import java.math.BigDecimal;
 public class Apple {
 
     private Integer id;
+    private int code;
     private String name;
     private BigDecimal money;
     private Integer num;
@@ -23,6 +24,9 @@ public class Apple {
         this.name = name;
         this.money = money;
         this.num = num;
+    }
+
+    public Apple() {
     }
 
     public Integer getId() {
@@ -57,10 +61,19 @@ public class Apple {
         this.num = num;
     }
 
+    public int getCode() {
+        return code;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
+    }
+
     @Override
     public String toString() {
         return "Apple{" +
                 "id=" + id +
+                ", code=" + code +
                 ", name='" + name + '\'' +
                 ", money=" + money +
                 ", num=" + num +
