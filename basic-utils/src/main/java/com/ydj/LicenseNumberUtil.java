@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
  *  
  *  <p> Date             : 2018/11/27 </p >
  *  <p> Module             : </p >
- *  <p> Description             : 证件号大码 </p >
+ *  <p> Description             : 证件号打码 </p >
  *  <p> Remark             : </p >
  *  @author yangdj
  *  @version 1.0
