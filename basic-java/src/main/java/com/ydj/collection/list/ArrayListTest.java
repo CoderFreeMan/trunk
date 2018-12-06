@@ -168,5 +168,14 @@ public class ArrayListTest {
         return list.stream().collect(Collectors.groupingBy(Apple::getId));
     }
 
+    /**
+     * 去除集合中的所有null对象
+     * @param list
+     * @return
+     */
+    public static boolean removeAllNull(List list) {
+        return list.removeAll(Collections.singleton(null));
+    }
+
 
 }
