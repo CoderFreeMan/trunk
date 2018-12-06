@@ -9,17 +9,15 @@ import java.util.stream.Collectors;
 public class ArrayListTest {
 
     public static void main(String[] args) {
-        List<QuChongObj> list = new ArrayList<>();
-        for (int i = 0; i < 1000; i++) {
-            QuChongObj o = new QuChongObj();
-            o.setId(i);
-            list.add(o);
-        }
-        for (int i = 0; i < list.size(); i++) {
-            list.get(i).setCompanyId("abc" + i);
-        }
+        List<String> list = new ArrayList<>();
+        list.add(null);
+        list.add(null);
+        list.add("string");
+        list.set(2, null);
+        boolean remove = list.removeAll(Collections.singleton(null));
+        System.out.println(list.size());
         list.stream().forEach(item -> {
-            System.out.println(item.getId());
+            System.out.println(item);
         });
     }
 
