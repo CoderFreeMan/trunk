@@ -1,7 +1,10 @@
 package com.springboot2x.kotlin.controller
 
+import com.springboot2x.kotlin.service.HelloKotlinService
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
+import org.springframework.stereotype.Service
 
 /**
  
@@ -20,9 +23,12 @@ import org.springframework.web.bind.annotation.RestController
 @RequestMapping(value = "/kotlin")
 class HelloKotlinController {
 
+    @Autowired
+    lateinit var helloKotlinService: HelloKotlinService
+
     @RequestMapping(value = "helloKotlin")
-    fun helloKotlin(): String {
-        return "helloKotlin"
+    fun helloKotlin(): Int {
+        return helloKotlinService.sun(1, 1)
     }
 
 }
