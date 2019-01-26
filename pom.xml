@@ -82,5 +82,6 @@
         <module>mybatis-practice</module>
         <module>springboot2</module>
         <module>kotlin</module>
+        <module>zookeeper3.4.8</module>
     </modules>
 </project>
