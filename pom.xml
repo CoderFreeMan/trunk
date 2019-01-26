@@ -81,5 +81,6 @@
         <module>support-mysql</module>
         <module>mybatis-practice</module>
         <module>springboot2</module>
+        <module>kotlin</module>
     </modules>
 </project>
