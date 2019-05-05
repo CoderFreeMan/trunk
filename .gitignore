@@ -1,20 +1,16 @@
-*.class
-*.lst
-*.original
-*.jar
-.idea/*
+# idea config file
+.idea/
 *.iml
+
+# class file
+*.class
+
+# log file
 *.log
-~*
-dubbo-module/dubbo-api/target/*
-dubbo-module/dubbo-consumer/target/*
-dubbo-module/dubbo-provider/target/*
-basic-java/target/*
-base-framework/target/*
-activemq-module/activemq-consumer/target/*
-activemq-module/activemq-producer/target/*
-rabbitmq-module/rabbitmq-consumer/target/*
-rabbitmq-module/rabbitmq-producer/target/*
-kafka-module/kafka-consumer/target/*
-kafka-module/kafka-producer/target/*
-basic-utils/target/*
+
+# package file
+*.jar
+*.war
+
+# target derictory
+target/
